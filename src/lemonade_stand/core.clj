@@ -17,7 +17,7 @@
 (defn start-game-question []
   (loop []
     (println "Type your answer and hit return ==>")
-    (let [start-game (read-line)]
+    (let [start-game (.toLowerCase (read-line))]
       (if (and (not (.startsWith start-game "y")) (not (.startsWith start-game "n")))
           (do (screen/bell) (recur))
           (println "we left the loop")))))
